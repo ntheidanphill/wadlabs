@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Forms 101 </title>
+        <head>
+
+            <body>
+                <section id="simple-form">
+                    <h2> Simple Form </h2>
+                    <!--the form element-->
+                    <form method="post"
+                        action="process.php"
+                        enctype="text/plain"
+                        id="simple-form"
+                        class="forms">
+
+                        <div class="form-group"></div>
+                        <label for="username"> Username </label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="form-group"></div>
+                    <label for="password"> Password </label>
+                    <input type="text" id="password" name="password">
+                </div>
+                <div class="form-group"></div>
+                    <input type="submit" name="login" value="Login">
+                    <input type="reset" id="reset" name="Clear">
+                </div>
+            </form>
+        </section>
+        <section id ="chicken-recipe-form">
+        <h2> Chicken Recipe Form </h2>
+        <form method = "post" action="process2.php">
+            <div class="form-group">
+                <label for = "recipe-title">
+                Recipe Title
+                </label>
+                <input type = "text" name="recipe-title" required>
+            </div>
+            <div class="form-group">
+                <label for = "dry-ingredients">
+                Dry Ingredients 
+                </label> <br>
+              <input id = "dry-ingredients" type = "checkbox" name="dry-ingredients" value = "Salt" required> Salt <br>
+              <input id = "dry-ingredients" type = "checkbox" name="dry-ingredients" value = "Pepper" required> Cayenne Pepper <br>
+              <input id = "dry-ingredients" type = "checkbox" name="dry-ingredients" value = "Paprika" required> Paprika <br>
+                <input type = "text" name="recipe-title" required>
+            </div>
+            <div class="form-group">
+                <label for = "grilled"> Grilled </label>
+            <input name = "grilled" id = "grilled-yes" value = "1"  type = "radio" > Yes
+             <input name = "grilled" id = "grilled-no" value = "0"  type = "radio" > No
+          </div>
+          <div class="form-group">
+                <label for = "steps"> Steps </label>
+                <textarea name = "steps" id = "steps">  </textarea>
+          </div>
+            <div class="form-group">
+                    <input type = "submit" name = "submit-recipe" value = "Submit Recipe">
+                    <input type = "reset" name = "clear-recipe" value = "Clear Form">
+            </div>
+        </form>
+        </section>
+    </body>
+</html>
