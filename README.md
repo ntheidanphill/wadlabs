@@ -20,21 +20,21 @@ php/
 
 ## The Adventurer (Me)
 
-<h2 align="center">YOUR_NAME</h2>
+<h2 align="center">DanphilL Nthei</h2>
 <table>
   <tbody>
     <tr>
       <td><b>Information</b></td>
       <td width="50%" rowspan="4">
-        <img alt="Photo" src="assets/images/REPLACE_WITH_IMAGE_NAME.EXT" />
+        <img alt="Photo" src="profile.jpeg" />
       </td>
     </tr>
     <tr>
       <td>
         <ul>
-          <li>YOUR_PREFERRED_NAME (How should I call you)</li>
-          <li>YOUR_STRATHMORE_Admission_number</li>
-          <li>YOUR_STRATHMORE_EMAIL</li>
+          <li>Danphill</li>
+          <li>220109</li>
+          <li>danphill.nthei@strathmore.edu</li>
         </ul>
       </td>
     </tr>
