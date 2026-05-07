@@ -1,0 +1,26 @@
+/*an external css file*/
+/* This is the style.css file for the Grand Theft Auto VI webpage */
+
+#features {
+    background-color: rgb(188, 188, 140);
+}
+
+body,header,h1,section {
+    border-style: dotted;
+    border-color: turquoise;
+    border-width: 2px;
+}
+
+h1 {
+    padding: top 10px;
+    padding: bottom 10px;
+    padding: left 10px;
+    padding-right:10px;
+    /*short hand for padding*/
+    padding: 10px;
+    /*TRouble*/
+    padding: 5px 10px 13px 50px;
+
+    margin: 5px;
+    /*this applies to all sides 4 margins*/
+}
