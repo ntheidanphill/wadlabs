@@ -67,7 +67,16 @@ Variables defined here become available everywhere in the stylesheet.
 /*
 example usage
 using the var keyword
-body{
-color: var(--col-cream)
-}
+
 */
+
+body{
+font-family:'Instrument Sans', sans-serif;
+font-size: 12px;
+font-weight: 400; /* normal, bold */;
+font-style: normal;
+}
+
+h1, h2, {
+    font-family: 'Young Serif', serif;
+}
