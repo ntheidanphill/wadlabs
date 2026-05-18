@@ -18,50 +18,50 @@ Variables defined here become available everywhere in the stylesheet.
 
 :root {
 
-    /* ===============================
+   /* ===============================
        BACKGROUND COLORS
        =============================== */
 
-    /* Deep night blue */
-    --col-bg-deep: #08131f;
+   /* Deep night blue */
+   --col-bg-deep: #08131f;
 
-    /* Main dark surface */
-    --col-bg-mid: #102030;
+   /* Main dark surface */
+   --col-bg-mid: #102030;
 
-    /* Transparent glass effect */
-    --col-bg-light: rgba(16, 32, 48, 0.82);
+   /* Transparent glass effect */
+   --col-bg-light: rgba(16, 32, 48, 0.82);
 
-    /* ===============================
+   /* ===============================
        PRIMARY ACCENT COLORS
        =============================== */
 
-    /* Neon cyan */
-    --col-cyan: #00d5d8;
+   /* Neon cyan */
+   --col-cyan: #00d5d8;
 
-    /* Bright electric cyan */
-    --col-cyan-light: #4ff6ea;
+   /* Bright electric cyan */
+   --col-cyan-light: #4ff6ea;
 
-    /* GTA VI pink/coral */
-    --col-coral: #ff4f87;
+   /* GTA VI pink/coral */
+   --col-coral: #ff4f87;
 
-    /* Soft neon pink */
-    --col-pink-soft: #ff9bb3;
+   /* Soft neon pink */
+   --col-pink-soft: #ff9bb3;
 
-    /* Sunset orange */
-    --col-sunset: #ff9f43;
+   /* Sunset orange */
+   --col-sunset: #ff9f43;
 
-    /* Warm amber */
-    --col-amber: #ffc46b;
+   /* Warm amber */
+   --col-amber: #ffc46b;
 
-    /* ===============================
+   /* ===============================
        TEXT COLORS
        =============================== */
 
-    /* Main light text */
-    --col-cream: #fff8f2;
+   /* Main light text */
+   --col-cream: #fff8f2;
 
-    /* Secondary muted text */
-    --col-muted: #7ea0b3;
+   /* Secondary muted text */
+   --col-muted: #7ea0b3;
 }
 
 /*
@@ -70,13 +70,64 @@ using the var keyword
 
 */
 
-body{
-font-family:'Instrument Sans', sans-serif;
-font-size: 12px;
-font-weight: 400; /* normal, bold */;
-font-style: normal;
+body {
+   font-family: 'Instrument Sans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   /* normal, bold */
+   ;
+   font-style: normal;
+   background-color: var(--col-coral);
+
+   margin: 0;
+   /*shorthand for margin-top, margin-right, margin-bottom, margin-left */
+   line-height: 1.7;
+   /* space between lines of text */
 }
 
-h1, h2, {
-    font-family: 'Young Serif', serif;
+h1,
+h2,
+{
+font-family: 'Young Serif', serif;
+}
+
+header {
+   /*box model (padding)*/
+   padding-top: 5px;
+   padding-right: 30px;
+   padding-bottom: 20px;
+
+
+   /*box model (border)*/
+   border-bottom-width: 2px;
+   border-bottom-style: solid;
+   border-bottom-color: var(--col-cyan);
+
+   text-align: center;
+
+   /*various ways of selecting the main heading (h1) given our html. 
+h1(element selector) is the most specific and will override the other two.
+#main-heading (id selector) is more specific than h1 and will override it.
+.main-heading (class selector) is less specific than an id but more specific than an element selector.*/
+
+     h1 {
+      /*em - relative to parent font size
+ rem - relative to root font size */
+      font-size: 3.5em;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: var(--col-sunset);
+
+      margin-left: 8px;
+
+}
+/*direct child selecto*/
+ b {
+
+   color: var(--col-sunset);
+   letter-spacing: 2px;
+   font-size: 0.95em;
+   
+}
+
 }
