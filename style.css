@@ -211,7 +211,7 @@ p {
 
 }
 
-h5 {
+h5,h4 {
    color: var(--col-amber);
    letter-spacing: 1px;
 }
@@ -230,4 +230,24 @@ h2 {
    border-bottom-color: var(--col-amber);
    border-bottom-style:solid;
    border-bottom-width: 2px;
+}
+
+main ul, main ol {
+   padding-left: 24px; /*indentation for lists*/
+   color:var(--col-cream);
+
+}
+
+main li {
+margin-left:4px
+}
+
+li:first-child { /*psuedo class selector -  to target the first list item in a list*/
+   color: var(--col-pink-soft);
+}
+main ul li::marker { /*psuedo element selector - to style the bullet points or numbers of list items*/
+   color: var(--col-cyan);
+}
+main ol li::marker {
+   color: var(--col-coral);
 }
