@@ -130,38 +130,104 @@ h1(element selector) is the most specific and will override the other two.
       font-size: 0.95em;
 
    }
-nav {
-   margin-top: 10px ;
+
+   nav {
+      margin-top: 10px;
+   }
+
+   nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      display: flex;
+      /*flexbox - a layout model that allows for responsive design and easy alignment of elements.*/
+      justify-content: center;
+      /*center the nav items horizontally*/
+      gap: 10px;
+
+   }
+
+   nav ul li a {
+      color: var(--col-bg-deep);
+      text-decoration: none;
+      font-size: 1.1em;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      padding: 8px 16px;
+      /*top/bottom padding, left/right padding*/
+      border: 1px solid var(--col-cyan-light);
+      /*border-width, border-style, border-color*/
+      border-radius: 7px;
+      /*rounded corners*/
+
+   }
+
+   /*psuedo classes for hover and active states */
+   nav ul li a:hover {
+      background-color: var(--col-cyan);
+      border-color: var(--col-pink-soft);
+      border-radius: 20px;
+      transition-property: background-color, border-color, border-radius;
+      transition-duration: 0.9s;
+      transition-timing-function: ease;
+   }
 }
-nav ul {
-   list-style-type: none;
-   padding:0;
-   margin: 0;
-   
-   display: flex; /*flexbox - a layout model that allows for responsive design and easy alignment of elements.*/
-   justify-content: center; /*center the nav items horizontally*/
-   gap: 10px;
+
+main {
+   max-width: 960px;
+   /*max-width - limits the width of the content for better readability on large screens */
+   margin-right: auto;
+   /*auto - centers the main content horizontally within its container */
+   margin-left: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+}
+
+section {
+   margin-bottom: 40px;
+   padding: 0 20px;
+   /*shorthand for padding-top, padding-right, padding-bottom, padding-left */
+   background-color: var(--col-bg-light);
+   border-radius: 5px;
+   border-left-style: solid;
+   border-left-color: var(--col-coral);
+   border-left-width: 5px;
+   /* CSS transitions for smooth hover effect */
+   transition-property: border-left-color;
+   transition-duration: 2s;
+   transition-timing-function: ease;
+   /*shorthand for transition-property, transition-duration, transition-timing-function */
+   transition: border-left-color 2s ease;
+}
+
+section:hover {
+   border-left-color: var(--col-cyan);
+}
+
+p {
+   color: var(--col-cream);
 
 }
-nav ul li a {
-   color: var(--col-bg-deep);
-   text-decoration: none;
-   font-size: 1.1em;
-   letter-spacing: 2px;
-   text-transform: uppercase;
-   
-   padding: 8px 16px; /*top/bottom padding, left/right padding*/
-   border: 1px solid  var(--col-cyan-light); /*border-width, border-style, border-color*/
-   border-radius: 7px; /*rounded corners*/
-   
+
+h5 {
+   color: var(--col-amber);
+   letter-spacing: 1px;
 }
 
-/*psuedo classes for hover and active states */
-nav ul li a:hover{
-background-color: var(--col-cyan);
-border-color: var(--col-pink-soft);
-border-radius: 20px;
+main b {
+   color: var(--col-coral);
+
 }
 
+main i {
+   color: var(--col-cyan);
+}
 
+h2 {
+   color: var(--col-sunset);
+   border-bottom-color: var(--col-amber);
+   border-bottom-style:solid;
+   border-bottom-width: 2px;
 }
