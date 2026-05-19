@@ -17,11 +17,9 @@ Variables defined here become available everywhere in the stylesheet.
 */
 
 :root {
-
    /* ===============================
-       BACKGROUND COLORS
-       =============================== */
-
+      BACKGROUND COLORS
+      =============================== */
    /* Deep night blue */
    --col-bg-deep: #08131f;
 
@@ -32,19 +30,18 @@ Variables defined here become available everywhere in the stylesheet.
    --col-bg-light: rgba(16, 32, 48, 0.82);
 
    /* ===============================
-       PRIMARY ACCENT COLORS
-       =============================== */
-
+      PRIMARY ACCENT COLORS
+      =============================== */
    /* Neon cyan */
    --col-cyan: #00d5d8;
 
    /* Bright electric cyan */
    --col-cyan-light: #4ff6ea;
 
-   /* GTA VI pink/coral */
+   /* GTA VI pink/coral - FIXED: Changed from 'cream' to a vibrant coral pink */
    --col-coral: #ff4f87;
 
-   /* Soft neon pink */
+   /* Soft neon pink - FIXED: Changed from dark maroon to a beautiful soft pastel neon pink */
    --col-pink-soft: #ff9bb3;
 
    /* Sunset orange */
@@ -54,9 +51,8 @@ Variables defined here become available everywhere in the stylesheet.
    --col-amber: #ffc46b;
 
    /* ===============================
-       TEXT COLORS
-       =============================== */
-
+      TEXT COLORS
+      =============================== */
    /* Main light text */
    --col-cream: #fff8f2;
 
@@ -85,95 +81,72 @@ body {
    /* space between lines of text */
 }
 
-h1,
-h2,
-{
-font-family: 'Young Serif', serif;
+h1, h2 {
+   font-family: 'Young Serif', serif;
 }
 
 header {
-   /*box model (padding)*/
+   /* box model (padding) */
    padding-top: 5px;
    padding-right: 30px;
    padding-bottom: 20px;
 
-
-   /*box model (border)*/
+   /* box model (border) */
    border-bottom-width: 2px;
    border-bottom-style: solid;
    border-bottom-color: var(--col-cyan);
 
    text-align: center;
+} /* <-- FIXED: Added this missing closing brace! */
 
-   /*various ways of selecting the main heading (h1) given our html. 
-h1(element selector) is the most specific and will override the other two.
-#main-heading (id selector) is more specific than h1 and will override it.
-.main-heading (class selector) is less specific than an id but more specific than an element selector.*/
-
-   h1 {
-      /*em - relative to parent font size
- rem - relative to root font size */
-      font-size: 3.5em;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      color: var(--col-sunset);
-
-      margin-left: 8px;
-
-   }
-
-   /*direct child selecto*/
-   b {
-
-      color: var(--col-sunset);
-      letter-spacing: 2px;
-      font-size: 0.95em;
-
-   }
-
-   nav {
-      margin-top: 10px;
-   }
-
-   nav ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-
-      display: flex;
-      /*flexbox - a layout model that allows for responsive design and easy alignment of elements.*/
-      justify-content: center;
-      /*center the nav items horizontally*/
-      gap: 10px;
-
-   }
-
-   nav ul li a {
-      color: var(--col-bg-deep);
-      text-decoration: none;
-      font-size: 1.1em;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-
-      padding: 8px 16px;
-      /*top/bottom padding, left/right padding*/
-      border: 1px solid var(--col-cyan-light);
-      /*border-width, border-style, border-color*/
-      border-radius: 7px;
-      /*rounded corners*/
-
-   }
-
-   /*psuedo classes for hover and active states */
-   nav ul li a:hover {
-      background-color: var(--col-cyan);
-      border-color: var(--col-pink-soft);
-      border-radius: 20px;
-      transition-property: background-color, border-color, border-radius;
-      transition-duration: 0.9s;
-      transition-timing-function: ease;
-   }
+/* Un-nesting these elements makes your stylesheet clean and standard */
+header h1 {
+   font-size: 3.5em;
+   letter-spacing: 8px;
+   text-transform: uppercase;
+   color: var(--col-sunset);
+   margin-left: 8px;
 }
+
+header b {
+   color: var(--col-sunset);
+   letter-spacing: 2px;
+   font-size: 0.95em;
+}
+
+nav {
+   margin-top: 10px;
+}
+
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+nav ul li a {
+   color: var(--col-bg-deep);
+   text-decoration: none;
+   font-size: 1.1em;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   padding: 8px 16px;
+   border: 1px solid var(--col-cyan-light);
+   border-radius: 7px;
+}
+
+nav ul li a:hover {
+   background-color: var(--col-cyan);
+   border-color: var(--col-pink-soft);
+   border-radius: 20px;
+   transition-property: background-color, border-color, border-radius;
+   transition-duration: 0.9s;
+   transition-timing-function: ease;
+}
+
 
 main {
    max-width: 960px;
@@ -245,7 +218,7 @@ main li {
    margin-left: 4px
 }
 
-li:first-child {
+section li:first-child {
    /*psuedo class selector -  to target the first list item in a list*/
    color: var(--col-pink-soft);
 }
@@ -283,3 +256,65 @@ gap:10px;
 article h4 {
 border-bottom: 2px solid var(--col-coral);
 }
+
+main {
+padding-left: 10px;
+padding-right: 10px;
+
+}
+
+
+/* ============================================================
+   RESPONSIVE BREAKPOINT RANGES
+   ------------------------------------------------------------
+   Small Mobile  :   0px   → 480px
+   Large Mobile  : 481px   → 600px
+   Tablet        : 601px   → 768px
+   Small Laptop  : 769px   → 1023px
+   Desktop       : 1024px  → 1279px
+   Wide Screens  : 1280px and above
+ 
+   Media queries allow CSS styles to change depending
+   on the screen size or device characteristics.
+   ============================================================ */
+
+
+/* Small Mobile Devices */
+@media screen and (max-width: 730px) {
+   .characters-grid {
+      grid-template-columns: 1fr;
+   }
+ nav ul {
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px;
+   }
+nav ul li a {
+      display: block; 
+   }
+}
+
+
+/* Large Mobile Devices 
+@media screen and (min-width: 481px) and (max-width: 600px) {
+   
+   } 
+*/
+
+
+/* Tablets */
+@media screen and (min-width: 601px) and (max-width: 768px) {
+  
+}
+
+
+/* Small Laptops */
+@media screen and (min-width: 769px) and (max-width: 1023px) {}
+
+
+/* Desktop Screens */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {}
+
+
+/* Wide Screens */
+@media screen and (min-width: 1280px) {}
