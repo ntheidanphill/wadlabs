@@ -110,7 +110,7 @@ h1(element selector) is the most specific and will override the other two.
 #main-heading (id selector) is more specific than h1 and will override it.
 .main-heading (class selector) is less specific than an id but more specific than an element selector.*/
 
-     h1 {
+   h1 {
       /*em - relative to parent font size
  rem - relative to root font size */
       font-size: 3.5em;
@@ -120,14 +120,48 @@ h1(element selector) is the most specific and will override the other two.
 
       margin-left: 8px;
 
-}
-/*direct child selecto*/
- b {
+   }
 
-   color: var(--col-sunset);
+   /*direct child selecto*/
+   b {
+
+      color: var(--col-sunset);
+      letter-spacing: 2px;
+      font-size: 0.95em;
+
+   }
+nav {
+   margin-top: 10px ;
+}
+nav ul {
+   list-style-type: none;
+   padding:0;
+   margin: 0;
+   
+   display: flex; /*flexbox - a layout model that allows for responsive design and easy alignment of elements.*/
+   justify-content: center; /*center the nav items horizontally*/
+   gap: 10px;
+
+}
+nav ul li a {
+   color: var(--col-bg-deep);
+   text-decoration: none;
+   font-size: 1.1em;
    letter-spacing: 2px;
-   font-size: 0.95em;
+   text-transform: uppercase;
+   
+   padding: 8px 16px; /*top/bottom padding, left/right padding*/
+   border: 1px solid  var(--col-cyan-light); /*border-width, border-style, border-color*/
+   border-radius: 7px; /*rounded corners*/
    
 }
+
+/*psuedo classes for hover and active states */
+nav ul li a:hover{
+background-color: var(--col-cyan);
+border-color: var(--col-pink-soft);
+border-radius: 20px;
+}
+
 
 }
