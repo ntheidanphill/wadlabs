@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                height: 100vh; 
+            }
+
+            /* FIXED: Changed selector name to match the HTML class */
+            .grid-container {
+                display: grid;
+                grid-template-columns: 100px 1fr 100px; 
+                grid-template-rows: 80px 1fr 40px; 
+                grid-template-areas:
+                    "header header header"
+                    "l-aside main r-aside"
+                    "footer footer footer";
+                gap: 8px; 
+                padding: 8px; 
+                height: 100vh; /* FIXED: Gives the grid a height to calculate '1fr' */
+                box-sizing: border-box; /* Prevents padding from causing scrollbars */
+            }
+
+            header {
+                grid-area: header;
+                background: rgb(131, 69, 69);
+                color: white;
+            }
+
+            /* FIXED: Changed to match HTML id="left" */
+            #left {
+                grid-area: l-aside;
+                background-color: lightblue;
+            }
+
+            main {
+                grid-area: main;
+                background-color: blue;
+                color: white;
+            }
+
+            /* FIXED: Changed to match HTML id="right" */
+            #right {
+                grid-area: r-aside;
+                background-color: purple;
+                color: white;
+            }
+
+            footer {
+                grid-area: footer;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header> Header </header>
+            <aside id="left"> Left </aside>
+            <main> Main </main>
+            <aside id="right"> Right </aside>
+            <footer> Footer </footer>
+        </div>
+    </body>
+</html><!DOCTYPE html>
+<html>
+    <head>
+        <title>Grid Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                height: 100vh; 
+                font-size: 16px;;
+            }
+
+            /* FIXED: Changed selector name to match the HTML class */
+            .grid-container {
+                display: grid;
+                grid-template-columns: 100px 1fr 100px; 
+                grid-template-rows: 80px 1fr 40px; 
+                grid-template-areas:
+                    "header header header"
+                    "l-aside main r-aside"
+                    "footer footer footer";
+                gap: 8px; 
+                padding: 8px; 
+                height: 100vh; /* FIXED: Gives the grid a height to calculate '1fr' */
+                box-sizing: border-box; /* Prevents padding from causing scrollbars */
+            }
+
+            header {
+                grid-area: header;
+                background: rgb(131, 69, 69);
+                color: white;
+            }
+
+            /* FIXED: Changed to match HTML id="left" */
+            #left {
+                grid-area: l-aside;
+                background-color: lightblue;
+            }
+
+            main {
+                grid-area: main;
+                background-color: blue;
+                color: white;
+            }
+
+            /* FIXED: Changed to match HTML id="right" */
+            #right {
+                grid-area: r-aside;
+                background-color: purple;
+                color: white;
+            }
+
+            footer {
+                grid-area: footer;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="grid-container">
+            <header> Header </header>
+            <aside id="left"> Left </aside>
+            <main> Main </main>
+            <aside id="right"> Right </aside>
+            <footer> Footer </footer>
+        </div>
+    </body>
+</html>
