@@ -153,12 +153,12 @@ bbit_2b_students.forEach(function (student) {
   console.log("student: ", student.name)
 });
 
+//@TODO: Show looping objects
 //getting the keys  of an object as an array
-console.log(student)
+console.log(Object.keys(student)); //["name", "university", "age", "passed", "grade", "admission number", "course", "group", "attendance", "addAttendance"]
 
 //getting the values of an object as an array
-//console.log(student.entries());
-
+console.log(Object.values(student)); //["Alice", "Strathmore University", 20, true, "A", 220109, "BBIT", "2A", 20, ƒ]
 
 //getting both keys and values of an object as an array
-//console.log(student.entries());
+console.log(Object.entries(student)); // [["name", "Alice"], ["university", "Strathmore University"], ["age", 20], ["passed", true], ["grade", "A"], ["admission number", 220109], ["course", "BBIT"], ["group", "2A"], ["attendance", 20], ["addAttendance", ƒ]]
