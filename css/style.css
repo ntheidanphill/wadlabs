@@ -1,0 +1,434 @@
+/* ============================================================
+   GTA VI FAN PAGE COLOR SYSTEM - NEON NOIR EDITION
+   Inspired by the official GTA VI visual style & neon aesthetics
+   ============================================================ */
+
+:root {
+   /* ===============================
+      BACKGROUND COLORS (Deep & Sleek)
+      =============================== */
+   /* Obsidian Midnight Black */
+   --col-bg-deep: #0a0b12;
+
+   /* Deep Neon Slate */
+   --col-bg-mid: #141724;
+
+   /* Smoky dark glassmorphism effect */
+   --col-bg-light: rgba(22, 26, 41, 0.85);
+
+   /* ===============================
+      PRIMARY ACCENT COLORS (High-Voltage Neon)
+      =============================== */
+   /* Laser cyan */
+   --col-cyan: #00f0ff;
+
+   /* Bright electric ice-cyan */
+   --col-cyan-light: #70f7ff;
+
+   /* Iconic GTA VI Vice Neon Pink */
+   --col-coral: #ff007f;
+
+   /* Soft pastel neon pink */
+   --col-pink-soft: #ff85c2;
+
+   /* Hyper sunset orange */
+   --col-sunset: #ff5e00;
+
+   /* Liquid gold amber */
+   --col-amber: #ffb700;
+
+   /* ===============================
+      TEXT COLORS (High Contrast & Readability)
+      =============================== */
+   /* Clean ice white */
+   --col-cream: #f6f6f9;
+
+   /* Cool steel grey */
+   --col-muted: #8e92a7;
+}
+
+body {
+   font-family: 'Instrument Sans', sans-serif;
+   font-size: 16px;
+   font-weight: 400;
+   font-style: normal;
+
+   /* FIXED: Changed from coral pink to deep obsidian so your site looks premium and readable */
+   background-color: var(--col-bg-deep);
+   color: var(--col-cream);
+
+   margin: 0;
+   line-height: 1.7;
+}
+
+h1,
+h2 {
+   font-family: 'Young Serif', serif;
+}
+
+header {
+   background-color: var(--col-bg-mid); /* Gives the header a sleek, dark anchor */
+   padding-top: 40px;                   /* Added more breathing room at the top */
+   padding-bottom: 30px;                /* Added more breathing room at the bottom */
+   border-bottom: 3px solid var(--col-cyan); /* A sharp, electric line separating it from the main content */
+   text-align: center;
+}
+
+/* Style the main title */
+header h1 {
+   font-size: 4em;                     /* Slightly bigger for impact */
+   letter-spacing: 10px;
+   text-transform: uppercase;
+   color: var(--col-sunset);           /* Your hyper sunset orange */
+   margin: 0 0 15px 10px;
+   
+   /* This dual neon shadow makes the orange text explode off the dark background */
+   text-shadow: 0 0 10px var(--col-sunset), 
+   0 0 5px var(--col-coral); 
+}
+
+/* Style the subtitle text inside the header */
+header p, header b {
+   color: var(--col-cream);            /* Keeps subtext clean and highly readable */
+   letter-spacing: 1px;
+}
+
+header b {
+   color: var(--col-pink-soft);        /* Gives Rockstar Games a subtle pastel pink pop */
+}
+
+nav {
+   margin-top: 10px;
+}
+
+nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+   display: flex;
+   justify-content: center;
+   gap: 10px;
+}
+
+nav ul li a {
+   /* FIXED: Changed from dark background blue to ice white so links are completely readable */
+   color: var(--col-cream);
+   text-decoration: none;
+   font-size: 1.1em;
+   letter-spacing: 2px;
+   text-transform: uppercase;
+   padding: 8px 16px;
+   border: 1px solid var(--col-cyan-light);
+   border-radius: 7px;
+   transition: all 0.4s ease;
+}
+
+nav ul li a:hover {
+   background-color: var(--col-cyan);
+   border-color: var(--col-pink-soft);
+   color: var(--col-bg-deep);
+   /* Text flips dark on hover for contrast */
+   border-radius: 20px;
+}
+
+main {
+   max-width: 960px;
+   margin-right: auto;
+   margin-left: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
+
+section {
+   margin-bottom: 40px;
+   padding: 20px;
+   background-color: var(--col-bg-light) !important;
+   /* Forces the deep dark blue/black */
+   border-radius: 5px;
+   border-left: 5px solid var(--col-coral);
+   /* Beautiful neon pink edge */
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+   transition: border-left-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+/* Make sure the section hover effect stays cool */
+section:hover {
+   border-left-color: var(--col-cyan);
+   /* Flips to laser cyan on hover */
+   box-shadow: 0 4px 25px rgba(0, 240, 255, 0.15);
+}
+
+/* Fix the headings so they are sunset orange instead of green */
+h2,
+.section-heading {
+   color: var(--col-sunset) !important;
+   /* High-voltage orange */
+   border-bottom: 2px solid var(--col-amber);
+   /* Liquid gold underline */
+   padding-bottom: 5px;
+   font-family: 'Young Serif', serif;
+}
+
+p {
+   color: var(--col-cream);
+}
+
+h5,
+h4 {
+   color: var(--col-amber);
+   letter-spacing: 1px;
+}
+
+main b {
+   color: var(--col-coral);
+}
+
+main i {
+   color: var(--col-cyan);
+}
+
+h2 {
+   color: var(--col-sunset);
+   border-bottom-color: var(--col-amber);
+   border-bottom-style: solid;
+   border-bottom-width: 2px;
+   padding-bottom: 5px;
+}
+
+main ul,
+main ol {
+   padding-left: 24px;
+   color: var(--col-cream);
+}
+
+main li {
+   margin-left: 4px;
+}
+
+section li:first-child {
+   color: var(--col-pink-soft);
+}
+
+main ul li::marker {
+   color: var(--col-cyan);
+}
+
+main ol li::marker {
+   color: var(--col-coral);
+}
+
+img {
+   max-width: 100%;
+   border-radius: 10px;
+   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+   color: var(--col-muted);
+}
+
+hr {
+   border: none;
+   border-top: 1px solid var(--col-cyan);
+}
+
+/* Characters Grid */
+.characters-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 15px;
+}
+
+article h4 {
+   border-bottom: 2px solid var(--col-coral);
+   padding-bottom: 5px;
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Small Mobile Devices */
+@media screen and (max-width: 730px) {
+   .characters-grid {
+      grid-template-columns: 1fr;
+   }
+
+   nav ul {
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px;
+   }
+
+   nav ul li a {
+      display: block;
+      text-align: center;
+   }
+}
+
+/* Tablet and larger breakpoints reserved for future layout adjustments */
+@media screen and (min-width: 601px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1023px) {}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {}
+
+@media screen and (min-width: 1280px) {}
+
+
+* {
+   box-sizing: border-box;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+.tagline {
+   color: var(--col-bg-deep);
+   margin: 0 10px 10px;
+}
+
+nav ul {
+   flex-wrap: wrap;
+}
+
+nav ul li a {
+   display: inline-block;
+}
+
+img {
+   display: block;
+}
+
+.section-highlight {
+   border-left-color: var(--col-cyan) !important;
+   box-shadow: 0 0 18px rgba(0, 213, 216, 0.35);
+}
+
+p,
+h4,
+label,
+code {
+   color: var(--col-cream);
+}
+
+.lab-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 16px;
+}
+
+.lab-card {
+   background-color: rgba(8, 19, 31, 0.65);
+   padding: 18px;
+   border-radius: 10px;
+   border: 1px solid rgba(79, 246, 234, 0.25);
+}
+
+button {
+   background-color: var(--col-coral);
+   color: var(--col-cream);
+   border: none;
+   border-radius: 8px;
+   padding: 10px 16px;
+   margin: 6px 4px 6px 0;
+   cursor: pointer;
+   font-weight: 700;
+}
+
+button:hover {
+   background-color: var(--col-sunset);
+   color: var(--col-bg-deep);
+}
+
+input,
+textarea {
+   width: 100%;
+   padding: 12px;
+   margin: 6px 0 14px;
+   border: 2px solid var(--col-cyan-light);
+   border-radius: 8px;
+   font-family: inherit;
+   font-size: 1em;
+}
+
+.form-row {
+   display: flex;
+   gap: 10px;
+   align-items: flex-start;
+}
+
+.form-row input {
+   flex: 1;
+}
+
+.dynamic-list {
+   padding-left: 0;
+   list-style: none;
+}
+
+.dynamic-list li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   gap: 12px;
+   background-color: rgba(8, 19, 31, 0.65);
+   padding: 10px 12px;
+   border-radius: 8px;
+   margin-bottom: 10px;
+}
+
+.delete-btn {
+   background-color: var(--col-bg-deep);
+   border: 1px solid var(--col-coral);
+}
+
+.output-box {
+   margin-top: 18px;
+   padding: 16px;
+   background-color: rgba(8, 19, 31, 0.65);
+   color: var(--col-cream);
+   border-radius: 8px;
+   border: 1px solid var(--col-cyan-light);
+}
+
+.success-text {
+   color: var(--col-cyan-light);
+   font-weight: 700;
+}
+
+.hidden {
+   display: none;
+}
+
+/* Update your existing mobile media query with these additions */
+@media screen and (max-width: 730px) {
+   .lab-grid {
+      grid-template-columns: 1fr;
+   }
+
+   header h1 {
+      font-size: 2.1em;
+      letter-spacing: 3px;
+   }
+
+   section {
+      padding: 20px;
+   }
+
+   .form-row {
+      flex-direction: column;
+   }
+
+   .form-row button {
+      width: 100%;
+   }
+
+   .dynamic-list li {
+      flex-direction: column;
+      align-items: stretch;
+   }
+}

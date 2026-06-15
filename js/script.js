@@ -162,3 +162,30 @@ console.log(Object.values(student)); //["Alice", "Strathmore University", 20, tr
 
 //getting both keys and values of an object as an array
 console.log(Object.entries(student)); // [["name", "Alice"], ["university", "Strathmore University"], ["age", 20], ["passed", true], ["grade", "A"], ["admission number", 220109], ["course", "BBIT"], ["group", "2A"], ["attendance", 20], ["addAttendance", ƒ]]
+
+/* DOM - Document Object Model (tree-like structure) */
+console.log(document );
+
+//Elements on our page (variables)
+const heading = document.querySelector("h1");
+console.log(heading);
+
+const previewImage = document.querySelector("img");
+console.log(previewImage);
+
+const aboutSection = document.getElementById('about');
+console.log(aboutSection);
+
+//all the sections
+const allSections = document.querySelectorAll('section');
+console.log(allSections);
+
+const allNavLinks = document.querySelectorAll('nav a');
+console.log(allNavLinks);
+
+let aboutParagraph = document.querySelector("#about p");
+console.log(aboutParagraph);
+
+//change its text
+aboutParagraph.textContent = "This text was changed!";
+aboutParagraph.style.color = "red";
