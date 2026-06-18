@@ -164,7 +164,7 @@ console.log(Object.values(student)); //["Alice", "Strathmore University", 20, tr
 console.log(Object.entries(student)); // [["name", "Alice"], ["university", "Strathmore University"], ["age", 20], ["passed", true], ["grade", "A"], ["admission number", 220109], ["course", "BBIT"], ["group", "2A"], ["attendance", 20], ["addAttendance", ƒ]]
 
 /* DOM - Document Object Model (tree-like structure) */
-console.log(document );
+console.log(document);
 
 //Elements on our page (variables)
 const heading = document.querySelector("h1");
@@ -189,3 +189,43 @@ console.log(aboutParagraph);
 //change its text
 aboutParagraph.textContent = "This text was changed!";
 aboutParagraph.style.color = "red";
+
+//setting/setter - updating the page from js
+//const previewImage = document.querySelector("img");
+console.log(previewImage);
+
+//via the DOM
+previewImage.setAttribute("title", "New Title of Image");
+previewImage.setAttribute("title", "New alternate text for the image");
+console.log(previewImage.alt);
+console.log(previewImage.title);
+
+//Event Handling - Events (user events - click, key events, scroll)
+//get element of interest - button with an id of changeTextBtnx
+changeTextBtn.addEventListener("click", function (event) {
+  console.log("Someone clicked me!");
+  demoText.textContent = "I have been changed wowww";
+  demoText.style.color = "orange";
+  demoText.style.fontSize = "16px";
+});
+
+//use case 1
+let highlightSectionsBtn = document.querySelector("#highlightSectionsBtn");
+highlightSectionsBtn.addEventListener("click", function (event) {
+  //one
+  document.querySelector("section#about").classList.toggle("section-highlight");
+
+  //highlight all sections
+  //document.querySelectorAll("section").classlist.toggle("section-highlight");
+  document.querySelectorAll("section").forEach(function (section) {
+    section.classList.toggle("section-highlight");
+  });
+});
+
+//get the textbo=x with id nameInput
+document.querySelector("#nameInput").addEventListener("input", function (event) {
+  
+  document.querySelector("#nameOutput").textContent =
+    "Hello " + document.querySelector("#nameInput").value + "!";
+});
+
