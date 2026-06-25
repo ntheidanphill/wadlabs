@@ -229,3 +229,71 @@ document.querySelector("#nameInput").addEventListener("input", function (event) 
     "Hello " + document.querySelector("#nameInput").value + "!";
 });
 
+//case 4 - character counter
+let gtaCommentTextArea = document.querySelector("#commentInput");
+let charCountParagraph = document.querySelector("#charCount");
+
+gtaCommentTextArea.addEventListener("input",function(e){
+//code goes here aka what will be executed when the
+//event hapens
+
+//count the number of characters
+let numberOfChars = gtaCommentTextArea.value.lenghth;
+//update the paragraph
+charCountParagraph.textContent = "Characters : "+numberOfChars;
+
+//prevent the user from typing after 60
+if (numberOfChars >= 60){
+    e.preventDefault();
+    gtaCommentTextArea.readOnly = true;
+}else{
+    //update the pararaph
+    charCountParagraph.textContent = "Characters: " + numberOfChars
+    
+}
+//number of words
+
+});
+
+
+//case 5 - keyboard events
+let keyOutput = document.querySelector("#keyOutput"); 
+//the event listener
+//when you press a key anywhere on the page cause
+//we have attached it to the entire page not just one elemnt
+document.addEventListener("keydown",function(event){
+    //updating the paragraph
+    keyOutputParagraph.textContent = "You pressed: "+event.key;
+});
+
+//case 6 - todo list, wish list
+let wishListInput = document.querySelector("#wishlistInput");
+let wishListButton = document.querySelector("#wishlistForm button");
+//<ul></ul>
+let wishList = document.querySelector("#wishlistItems");
+
+wishListButton.addEventListener("click",function(event){
+    //prevent the form from being submitted
+    event.preventDefault();
+
+    //read whatever is in the wishListInput
+    let wishListInputValue = wishListInput.value;
+    console.log(wishListInputValue);
+
+    //update the list if the wishListInputValue !=null
+if(wishListInputValue != null){
+    //console.log(wishListInputValue);
+    let li = document.createElement("li");
+    let button = document.createElement("button");
+    button.textContent = "Delete";
+    li.textContent = wishListInputValue;
+    li.textContent = wishListInputValue;
+
+    //we append the list to the UL
+    wishListItems.appendChild(li);
+
+    //finally we clear what the user typed in the input field
+    wishListInput.value = "";
+    
+}
+});
