@@ -224,7 +224,7 @@ highlightSectionsBtn.addEventListener("click", function (event) {
 
 //get the textbo=x with id nameInput
 document.querySelector("#nameInput").addEventListener("input", function (event) {
-  
+
   document.querySelector("#nameOutput").textContent =
     "Hello " + document.querySelector("#nameInput").value + "!";
 });
@@ -233,37 +233,37 @@ document.querySelector("#nameInput").addEventListener("input", function (event) 
 let gtaCommentTextArea = document.querySelector("#commentInput");
 let charCountParagraph = document.querySelector("#charCount");
 
-gtaCommentTextArea.addEventListener("input",function(e){
-//code goes here aka what will be executed when the
-//event hapens
+gtaCommentTextArea.addEventListener("input", function (e) {
+  //code goes here aka what will be executed when the
+  //event hapens
 
-//count the number of characters
-let numberOfChars = gtaCommentTextArea.value.lenghth;
-//update the paragraph
-charCountParagraph.textContent = "Characters : "+numberOfChars;
+  //count the number of characters
+  let numberOfChars = gtaCommentTextArea.value.lenghth;
+  //update the paragraph
+  charCountParagraph.textContent = "Characters : " + numberOfChars;
 
-//prevent the user from typing after 60
-if (numberOfChars >= 60){
+  //prevent the user from typing after 60
+  if (numberOfChars >= 60) {
     e.preventDefault();
     gtaCommentTextArea.readOnly = true;
-}else{
+  } else {
     //update the pararaph
     charCountParagraph.textContent = "Characters: " + numberOfChars
-    
-}
-//number of words
+
+  }
+  //number of words
 
 });
 
 
 //case 5 - keyboard events
-let keyOutput = document.querySelector("#keyOutput"); 
+let keyOutput = document.querySelector("#keyOutput");
 //the event listener
 //when you press a key anywhere on the page cause
 //we have attached it to the entire page not just one elemnt
-document.addEventListener("keydown",function(event){
-    //updating the paragraph
-    keyOutputParagraph.textContent = "You pressed: "+event.key;
+document.addEventListener("keydown", function (event) {
+  //updating the paragraph
+  keyOutput.textContent = "You pressed: " + event.key;
 });
 
 //case 6 - todo list, wish list
@@ -272,28 +272,98 @@ let wishListButton = document.querySelector("#wishlistForm button");
 //<ul></ul>
 let wishList = document.querySelector("#wishlistItems");
 
-wishListButton.addEventListener("click",function(event){
-    //prevent the form from being submitted
-    event.preventDefault();
+wishListButton.addEventListener("click", function (event) {
+  // prevent the form from being submitted
+  event.preventDefault();
 
-    //read whatever is in the wishListInput
-    let wishListInputValue = wishListInput.value;
-    console.log(wishListInputValue);
+  // read whatever is in the wishListInput
+  let wishListInputValue = wishListInput.value;
+  console.log(wishListInputValue);
 
-    //update the list if the wishListInputValue !=null
-if(wishListInputValue != null){
-    //console.log(wishListInputValue);
+  // update the list if the input is not empty
+  if (wishListInputValue !== "") {
+
     let li = document.createElement("li");
     let button = document.createElement("button");
     button.textContent = "Delete";
     li.textContent = wishListInputValue;
-    li.textContent = wishListInputValue;
 
-    //we append the list to the UL
-    wishListItems.appendChild(li);
+    li.appendChild(button);
 
-    //finally we clear what the user typed in the input field
+    // we are going to add an event listener with the new dynamic element
+    button.addEventListener("click", event => {
+      li.remove();
+    });
+
+    // we append the fully assembled list item to the UL
+    wishList.appendChild(li);
+
+    // finally we clear what the user typed in the input field
     wishListInput.value = "";
-    
-}
+  }
 });
+
+//case 6b - delete a wish list item
+let deleteButtons = document.querySelectorAll("#wishlistItems button");
+//console.log(deleteButtons);
+
+//iterate a.k.a loop through the buttons
+deleteButtons.forEach(button => {
+  button.addEventListener("click", event => {
+    //console.log("delete button clicked");
+    //how do we get the first list item in an unorddered list
+    //given that the ul has an id of #wishListItems
+
+    //querySelector - returns the first matching element
+    let first_li = document.querySelector("#wishlistItems li"); //first one
+    first_li.remove(); //removes the first item only
+  });
+});
+
+//case 7 - submit form/validation
+let feedbackForm = document.querySelector("#feedbackForm");
+let feedbackOutput = document.querySelector("#feedbackOutput"); // Corrected spelling
+
+// Listen for a 'submit' on the form instead of a 'click'
+feedbackForm.addEventListener("submit", event => {
+  // prevent the form from being submitted normally
+  event.preventDefault();
+
+  // get values filled in the form
+  const name = document.querySelector("#fanName");
+  const email = document.querySelector("#fanEmail");
+  const message = document.querySelector("#fanMessage");
+
+  // Display the user's feedback
+  feedbackOutput.innerHTML =
+    "<strong> Fan Feedback Submitted </strong> <br>" +
+    "<p> Name: " + name.value + "</p>" +
+    "<p> Email: " + email.value + "</p>" +
+    "<p> Message: " + message.value + "</p>";
+
+  // clear the form fields
+  name.value = "";
+  email.value = "";
+  message.value = "";
+
+  // add success styles to the output div
+  feedbackOutput.classList.add('success-text');
+});
+
+
+//reset button to undo chnanging text
+let resetBtn = document.querySelector("#resetBtn");
+resetBtn.addEventListener("click", event => {
+  //  undo the changed text
+  demoText.textContent = "Click the button to modify this text using JavaScript";
+  demoText.style.colour = "white";
+  demoText.style.fontSize = "16px";
+
+  //undo the highlight of the sections 
+  //toggle will remove id present or add if absent
+  document.querySelectorAll("section").forEach(function (section) {
+    section.classList.remove("section-highlight");
+  });
+});
+
+
